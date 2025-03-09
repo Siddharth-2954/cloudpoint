@@ -9,14 +9,12 @@ function initMap() {
 
   // Base map layer
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
   }).addTo(map);
 
   // Add temperature layer (interactive weather map)
   L.tileLayer(`https://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=${WEATHER_API_KEY}`, {
     maxZoom: 18,
-    opacity: 0.6,
-    attribution: '© OpenWeatherMap'
+    opacity: 0.6
   }).addTo(map);
 
   map.on("click", async (event) => {
